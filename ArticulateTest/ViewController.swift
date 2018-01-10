@@ -10,17 +10,19 @@ import UIKit
 import WebKit
 
 class ViewController: UIViewController, WKNavigationDelegate {
-
+    
+    var gameUrl: String?
+    
     @IBOutlet weak var webView: WKWebView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let url = URL(string: "https://articulatehosting.mybluemix.net/game1/story_html5.html")
-        let request = URLRequest(url: url!)
         
-        // init and load request in webview.
-        webView.navigationDelegate = self
-        webView.load(request)
+        if let gurl = gameUrl {
+            let request = URLRequest(url: URL(string: gurl)!)
+            webView.navigationDelegate = self
+            webView.load(request)
+        }
     }
 
     override func didReceiveMemoryWarning() {

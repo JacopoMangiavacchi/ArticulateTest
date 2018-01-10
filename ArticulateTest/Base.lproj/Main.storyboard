@@ -19,7 +19,7 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="rJh-rO-GRK" kind="relationship" relationship="rootViewController" id="HS2-t1-yWd"/>
+                        <segue destination="fez-GR-l5E" kind="relationship" relationship="rootViewController" id="4P8-E0-5GH"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oKE-Zy-SX0" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -27,33 +27,113 @@
             <point key="canvasLocation" x="95" y="441"/>
         </scene>
         <!--Game List-->
-        <scene sceneID="FNp-TC-hTS">
+        <scene sceneID="L1M-fG-E8O">
             <objects>
-                <viewController id="rJh-rO-GRK" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="sVt-fr-glp">
+                <tableViewController id="fez-GR-l5E" customClass="TableViewController" customModule="ArticulateTest" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="E16-46-NTg">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TeM-jV-Q32">
-                                <rect key="frame" x="146" y="318" width="82" height="30"/>
-                                <state key="normal" title="Open Game"/>
-                                <connections>
-                                    <segue destination="yLA-ef-ooI" kind="show" id="L3Y-8Z-yiC"/>
-                                </connections>
-                            </button>
-                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <constraints>
-                            <constraint firstItem="TeM-jV-Q32" firstAttribute="centerY" secondItem="sVt-fr-glp" secondAttribute="centerY" id="IZp-sY-YmH"/>
-                            <constraint firstItem="TeM-jV-Q32" firstAttribute="centerX" secondItem="sVt-fr-glp" secondAttribute="centerX" id="YhR-oY-w4e"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="Ct4-6a-n0a"/>
-                    </view>
-                    <navigationItem key="navigationItem" title="Game List" id="cU4-sv-GkD"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="E88-1O-Q7a" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                        <sections>
+                            <tableViewSection headerTitle="IBM Cloud" id="8E3-JA-n9I">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="bye-pF-3zp" style="IBUITableViewCellStyleDefault" id="vUY-IW-4DC">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="vUY-IW-4DC" id="6Ec-2c-awZ">
+                                            <rect key="frame" x="0.0" y="0.0" width="341" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Smoking Stinks Sudoku" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="bye-pF-3zp">
+                                                    <rect key="frame" x="16" y="0.0" width="324" height="43.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="yLA-ef-ooI" kind="show" identifier="IBM1" id="4zA-Me-lrp"/>
+                                        </connections>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="E9l-em-wgW" style="IBUITableViewCellStyleDefault" id="PII-by-EwZ">
+                                        <rect key="frame" x="0.0" y="72" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="PII-by-EwZ" id="lc8-96-ItA">
+                                            <rect key="frame" x="0.0" y="0.0" width="341" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Watch out falling tools" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="E9l-em-wgW">
+                                                    <rect key="frame" x="16" y="0.0" width="324" height="43.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="yLA-ef-ooI" kind="show" identifier="IBM2" id="M6M-2J-Sjx"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                            <tableViewSection headerTitle="Westfield WWW" id="nZV-ky-fqm">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="S42-Ic-t3U" style="IBUITableViewCellStyleDefault" id="1YJ-iE-RjH">
+                                        <rect key="frame" x="0.0" y="144" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="1YJ-iE-RjH" id="aIq-CZ-bdB">
+                                            <rect key="frame" x="0.0" y="0.0" width="341" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Smoking Stinks Sudoku" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="S42-Ic-t3U">
+                                                    <rect key="frame" x="16" y="0.0" width="324" height="43.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="yLA-ef-ooI" kind="show" identifier="Westfield1" id="VBu-r2-CKT"/>
+                                        </connections>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="7t4-Vl-lmO" style="IBUITableViewCellStyleDefault" id="ifN-YB-47t">
+                                        <rect key="frame" x="0.0" y="188" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ifN-YB-47t" id="zXN-Vj-j7c">
+                                            <rect key="frame" x="0.0" y="0.0" width="341" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Watch out falling tools" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="7t4-Vl-lmO">
+                                                    <rect key="frame" x="16" y="0.0" width="324" height="43.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="yLA-ef-ooI" kind="show" identifier="Westfield2" id="OrN-jR-BIM"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                        </sections>
+                        <connections>
+                            <outlet property="dataSource" destination="fez-GR-l5E" id="G8A-G9-jhm"/>
+                            <outlet property="delegate" destination="fez-GR-l5E" id="Fez-5I-VSt"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Game List" id="iP7-IY-cca"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NUt-b3-NRO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="857" y="440"/>
+            <point key="canvasLocation" x="858" y="442"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="LJJ-zk-ZRp">
@@ -72,7 +152,7 @@
                                 </wkWebViewConfiguration>
                             </wkWebView>
                         </subviews>
-                        <color key="backgroundColor" name="systemBlueColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="OBI-Df-iUd" firstAttribute="bottom" secondItem="zyq-v8-xxd" secondAttribute="bottom" id="GVV-Z5-QiN"/>
                             <constraint firstItem="OBI-Df-iUd" firstAttribute="trailing" secondItem="zyq-v8-xxd" secondAttribute="trailing" id="IhO-hm-pwh"/>
@@ -90,4 +170,7 @@
             <point key="canvasLocation" x="1620" y="440"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="OrN-jR-BIM"/>
+    </inferredMetricsTieBreakers>
 </document>
