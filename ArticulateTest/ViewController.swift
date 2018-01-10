@@ -9,7 +9,7 @@
 import UIKit
 import WebKit
 
-class ViewController: UIViewController, WKNavigationDelegate {
+class ViewController: UIViewController, WKNavigationDelegate { //, WKUIDelegate {
     
     var gameUrl: String?
     
@@ -22,6 +22,7 @@ class ViewController: UIViewController, WKNavigationDelegate {
         if let gurl = gameUrl {
             let request = URLRequest(url: URL(string: gurl)!)
             webView.navigationDelegate = self
+//            webView.uiDelegate = self
             webView.load(request)
         }
     }
@@ -52,12 +53,32 @@ class ViewController: UIViewController, WKNavigationDelegate {
     func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
         activityIndicator.stopAnimating()
         print("FINISH")
+        
+//        //let closeScript = "var script = document.createElement('script'); script.type = 'text/javascript'; script.text = \"window.close = function windowOnClose() { javascript:window.location='hackCloseWindowFrame://' };\"; document.getElementsByTagName('head')[0].appendChild(script);"
+//
+//        let closeScript = "window.close = function () { location.href = 'hackCloseWindowFrame://'; };"
+//
+//        webView.evaluateJavaScript(closeScript) { (result, error) in
+//            if let e = error {
+//                print(e.localizedDescription)
+//            }
+//            else if let r = result {
+//                print(r)
+//            }
+//            else {
+//                print("ok")
+//            }
+//        }
     }
     
     func webViewWebContentProcessDidTerminate(_ webView: WKWebView) {
         activityIndicator.stopAnimating()
         print("TERMINATE")
     }
+    
+//    func webViewDidClose(_ webView: WKWebView) {
+//        print("CLOSING")
+//    }
     
     @IBAction func onClose(_ sender: Any) {
         print("CLOSE")
