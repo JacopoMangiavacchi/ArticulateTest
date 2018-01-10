@@ -9,6 +9,11 @@
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="HelveticaNeue.ttc">
+            <string>HelveticaNeue</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--Navigation Controller-->
         <scene sceneID="dXG-8F-egW">
@@ -17,6 +22,10 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="ouR-8V-LaV">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" name="systemBlueColor" catalog="System" colorSpace="catalog"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
                     </navigationBar>
                     <connections>
                         <segue destination="fez-GR-l5E" kind="relationship" relationship="rootViewController" id="4P8-E0-5GH"/>
@@ -140,34 +149,56 @@
             <objects>
                 <viewController id="yLA-ef-ooI" customClass="ViewController" customModule="ArticulateTest" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="oLg-i7-qID">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zyq-v8-xxd">
-                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
-                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <wkWebViewConfiguration key="configuration">
                                     <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
                                     <wkPreferences key="preferences"/>
                                 </wkWebViewConfiguration>
                             </wkWebView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="dBe-36-Tgh">
+                                <rect key="frame" x="169" y="283" width="37" height="37"/>
+                                <color key="color" name="systemBlueColor" catalog="System" colorSpace="catalog"/>
+                            </activityIndicatorView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6md-eI-a40">
+                                <rect key="frame" x="319" y="20" width="40" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="40" id="noZ-FZ-eze"/>
+                                    <constraint firstAttribute="height" constant="40" id="w9b-Qq-yRx"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="40"/>
+                                <state key="normal" title="🛑"/>
+                                <connections>
+                                    <action selector="onClose:" destination="yLA-ef-ooI" eventType="touchUpInside" id="v2M-O8-5ze"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="OBI-Df-iUd" firstAttribute="bottom" secondItem="zyq-v8-xxd" secondAttribute="bottom" id="GVV-Z5-QiN"/>
                             <constraint firstItem="OBI-Df-iUd" firstAttribute="trailing" secondItem="zyq-v8-xxd" secondAttribute="trailing" id="IhO-hm-pwh"/>
                             <constraint firstItem="zyq-v8-xxd" firstAttribute="top" secondItem="OBI-Df-iUd" secondAttribute="top" id="aOd-sF-ECo"/>
+                            <constraint firstItem="dBe-36-Tgh" firstAttribute="centerX" secondItem="oLg-i7-qID" secondAttribute="centerX" id="ahl-Ny-6gZ"/>
+                            <constraint firstItem="OBI-Df-iUd" firstAttribute="trailing" secondItem="6md-eI-a40" secondAttribute="trailing" constant="16" id="ctD-rU-s0K"/>
+                            <constraint firstItem="dBe-36-Tgh" firstAttribute="centerY" secondItem="oLg-i7-qID" secondAttribute="centerY" id="gjU-U7-nme"/>
+                            <constraint firstItem="6md-eI-a40" firstAttribute="top" secondItem="OBI-Df-iUd" secondAttribute="top" constant="20" id="hsJ-Vr-PvX"/>
                             <constraint firstItem="zyq-v8-xxd" firstAttribute="leading" secondItem="OBI-Df-iUd" secondAttribute="leading" id="uGg-M2-Kzi"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="OBI-Df-iUd"/>
                     </view>
+                    <extendedEdge key="edgesForExtendedLayout"/>
                     <connections>
+                        <outlet property="activityIndicator" destination="dBe-36-Tgh" id="ySM-lB-N1i"/>
                         <outlet property="webView" destination="zyq-v8-xxd" id="OjP-d7-ks8"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QVT-T5-83w" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1620" y="440"/>
+            <point key="canvasLocation" x="1620" y="439.43028485757122"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>

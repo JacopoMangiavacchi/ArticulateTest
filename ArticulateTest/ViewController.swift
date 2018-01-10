@@ -13,6 +13,7 @@ class ViewController: UIViewController, WKNavigationDelegate {
     
     var gameUrl: String?
     
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     @IBOutlet weak var webView: WKWebView!
     
     override func viewDidLoad() {
@@ -25,6 +26,10 @@ class ViewController: UIViewController, WKNavigationDelegate {
         }
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        self.navigationController?.setNavigationBarHidden(true, animated: animated)
+    }
+
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -35,19 +40,28 @@ class ViewController: UIViewController, WKNavigationDelegate {
     }
     
     func webView(_ webView: WKWebView, didFail navigation: WKNavigation!, withError error: Error) {
+        activityIndicator.stopAnimating()
         print("FAIL1")
     }
     
     func webView(_ webView: WKWebView, didFailProvisionalNavigation navigation: WKNavigation!, withError error: Error) {
+        activityIndicator.stopAnimating()
         print("FAIL2")
     }
     
     func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
+        activityIndicator.stopAnimating()
         print("FINISH")
     }
     
     func webViewWebContentProcessDidTerminate(_ webView: WKWebView) {
+        activityIndicator.stopAnimating()
         print("TERMINATE")
+    }
+    
+    @IBAction func onClose(_ sender: Any) {
+        print("CLOSE")
+        self.navigationController?.popViewController(animated: true)
     }
 }
 
